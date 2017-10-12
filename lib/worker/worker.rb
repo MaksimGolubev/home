@@ -61,7 +61,6 @@ module Gardener
     def open_tree(tree_name)
       file_path = "#{$LOAD_PATH.first}/trees/#{tree_name}.tree"
       tree = File.open(file_path) { |file| file.read.chomp }
-      require 'pry'; binding.pry
       eval tree
     end
 
